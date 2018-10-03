@@ -1,0 +1,71 @@
+
+/**
+ * Write a description of class Time1 here.
+ *
+ * @author (Meredith Clemens and Kat Lynch)
+ * @version (10/1/18)
+ */
+public class Time1
+{
+    // instance variables - replace the example below with your own
+    private int hour;
+    private int minute;
+    private int second; 
+
+    /**
+     * Constructor for objects of class Time1
+     */
+    public Time1 ( int h, int m, int s)
+    {
+        hour = h;
+        minute = m;
+        second = s;
+    }
+    
+    public Time1 (int h, int m)
+    {
+        hour = h;
+        minute = m;
+        second = 0;
+    }
+    
+    public Time1 (int totalSec)
+    {
+        hour = totalSec/3600;
+        minute = totalSec/60;
+        second = totalSec % 60;
+    }
+    
+    public int getHours()
+    {
+        return hour;
+    }
+    
+    public int getMinutes()
+    {
+        return minute;
+    }
+    
+    public int getSeconds()
+    {
+        return second;
+    }
+    private String write2digits (int n)
+    {
+        if (n < 10)
+        {
+            return "0" + n;
+        }
+        else
+        {
+            return "" + n;
+        }
+    }
+    
+    public String toString()
+    {
+       String ans = write2digits(getHours()) + ":" + 
+       write2digits(getMinutes()) + ":" + write2digits(getSeconds());
+       return ans;
+    }
+}
